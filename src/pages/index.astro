@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import MyComponent from "../MyReactComponent/MyReactComponent.jsx";
+import PassProps from "../MyReactComponent/PassProps.jsx";
+import MyHeader from "../MyReactComponent/MyHeader.jsx";
+---
+
+<!-- Passing Children to Framework Components -->
+<MyHeader>
+  <h2 slot="title">ASTRO</h2>
+  <main slot="children">THIS IS FROM CHILDREN</main>
+  <ul slot="socialLinks">
+    <li><a href="#">Facebook</a></li>
+    <li><a href="#">Instagram</a></li>
+    <li><a href="#">Twitter</a></li>
+  </ul>
+</MyHeader>
+
+<html>
+  <body>
+    <h1 class="text-3xl font-semibold text-center mt-10">
+      Use React Components Directly in Astro!
+    </h1>
+    <!-- COMPONENT SHOULD HAVE CLIENT -->
+    <MyComponent client:load />
+    <!-- PASSING A PROPS -->
+    <PassProps name={"LENG (^__^)"} />
+  </body>
+</html>
