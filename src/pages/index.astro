@@ -1,15 +1,15 @@
 ---
 // import Layout from "../layouts/Layout.astro";
 // import Card from "../components/Card.astro";
-import MyComponent from "../MyReactComponent/MyReactComponent.jsx";
-import PassProps from "../MyReactComponent/PassProps.jsx";
-import MyHeader from "../MyReactComponent/MyHeader.jsx";
+import MyComponent from "../MyReactComponent/MyReactComponent";
+import PassProps from "../MyReactComponent/PassProps";
+import MyHeader from "../MyReactComponent/MyHeader";
 ---
 
-<!-- Passing Children to Framework Components -->
-<MyHeader>
+<!-- Passing Children JS component to Framework Components --><!-- Children word have meaning to Astro -->
+<MyHeader client:load>
   <h2 slot="title">ASTRO</h2>
-  <main slot="children">THIS IS FROM CHILDREN</main>
+  <p slot="subTitle">THIS IS FROM CHILDREN</p>
   <ul slot="socialLinks">
     <li><a href="#">Facebook</a></li>
     <li><a href="#">Instagram</a></li>
