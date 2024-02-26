@@ -24,37 +24,25 @@ export default function SetCount() {
         <div class="flex gap-2 mt-5 ml-2 justify-center">
           <button
             onClick={incrementCount}
-            class="px-5 py-2 border border-black rounded-md"
+            class="px-5 py-2 border rounded-md font-semibold bg-red-200 shadow-lg "
           >
             +1
           </button>
           <button
             onClick={decrementCount}
-            class="px-5 py-2 border border-black rounded-md"
+            class="px-5 py-2 border rounded-md font-semibold bg-yellow-200 shadow-lg "
           >
             -1
           </button>
           <button
             onClick={reset}
-            class="px-5 py-2 border border-black rounded-md"
+            class="px-5 py-2 border rounded-md font-semibold bg-green-200 shadow-lg "
           >
             Reset
           </button>
         </div>
-        <p class="text-6xl text-center mt-3">{count}</p>
+        <p class="text-6xl text-center mt-8">{count}</p>
       </div>
     </>
   );
 }
-
-// export default function Increment() {
-// return setCount(count + 1);
-// }
-
-// export default function Decrement(props) {
-// return setCount(count + 1);
-// }
-
-// export default function Reset(props) {
-// return setCount(count + 1);
-// }

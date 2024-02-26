@@ -4,27 +4,51 @@
 import MyComponent from "../MyReactComponent/MyReactComponent";
 import PassProps from "../MyReactComponent/PassProps";
 import MyHeader from "../MyReactComponent/MyHeader";
+
+const pageTitle = "Homepage";
 ---
 
-<!-- Passing Children JS component to Framework Components --><!-- Children word have meaning to Astro -->
-<MyHeader client:load>
-  <h2 slot="title">ASTRO</h2>
-  <p slot="subTitle">THIS IS FROM CHILDREN</p>
-  <ul slot="socialLinks">
-    <li><a href="#">Facebook</a></li>
-    <li><a href="#">Instagram</a></li>
-    <li><a href="#">Twitter</a></li>
-  </ul>
-</MyHeader>
-
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
   <body>
-    <h1 class="text-3xl font-semibold text-center mt-10">
+    <!-- USING SLOT  -->
+    <div class="flex justify-center gap-10 bg-cyan-100 py-5">
+      <a
+        slot="
+      title"
+        class="text-xl font-bold underline text-blue-700"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        slot="
+      title"
+        class="text-xl font-bold underline text-green-600"
+        href="/webpages/about"
+      >
+        About
+      </a>
+      <a
+        slot="
+      title"
+        class="text-xl font-bold underline text-purple-600"
+        href="/webpages/blog"
+      >
+        Blog
+      </a>
+    </div>
+
+    <h1 class="text-3xl font-bold text-center mt-10 text-orange-400 uppercase">
       Use React Components Directly in Astro!
     </h1>
     <!-- COMPONENT SHOULD HAVE CLIENT -->
-    <MyComponent client:load />
-    <!-- PASSING A PROPS -->
-    <PassProps name={"LENG (^__^)"} />
+    <MyComponent client:visible />
+    <!-- PASSING A PROPS INTO ASTRO FILE -->
+    <PassProps username={"Leng"} age={22} isCute={true} />
   </body>
 </html>

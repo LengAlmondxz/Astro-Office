@@ -1,0 +1,87 @@
+---
+const pageTitle = "about me~!";
+const information = {
+  name: "Leng",
+  age: 22,
+  favColor: "Blue",
+  hobbies: ["Playing", "Singing", "Sleeping", "Watching"],
+};
+
+const cats = ["Orange", "Black"];
+
+//Variables
+const happy = true;
+const finished = false;
+const goal = 3;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <h1
+      class="uppercase text-3xl font-semibold text-center mt-10 text-green-600"
+    >
+      About Page
+    </h1>
+    <p class="text-3xl font-semibold text-cyan-500 mt-10 text-center">
+      This site will update as I complete more of the tutorial, so keep checking
+      back and see how my journey is going!
+    </p>
+
+    <div class="flex gap-3 justify-center">
+      <div class="text-left mt-10 w-56 shadow-lg rounded-md ml-5">
+        <h1 class="text-xl font-bold text-pink-400">
+          Here are few facts about me :
+        </h1>
+        <div class="mt-2 text-left text-lg">
+          <p>Nickname : {information.name}</p>
+          <p>Age : {information.age}</p>
+          <p>Favoriate Color : {information.favColor}</p>
+        </div>
+      </div>
+
+      <div class="text-left mt-10 w-56 shadow-lg rounded-md ml-5">
+        <h1 class="text-xl font-bold text-pink-400">
+          Here are my some of my hobbies :
+        </h1>
+        <div class="mt-2 text-left text-lg">
+          <ul class="list-decimal ml-10">
+            <li>{information.hobbies[0]}</li>
+            <li>{information.hobbies[1]}</li>
+            <li>{information.hobbies[2]}</li>
+            <li>{information.hobbies[3]}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-left mt-10 w-56 shadow-lg rounded-md ml-5">
+        <h1 class="text-xl font-bold text-pink-400">
+          Here are my colors of my cats :
+        </h1>
+        {cats.map((colors) => <li class="mt-2 text-lg">{colors}</li>)}
+      </div>
+    </div>
+
+    <div class="text-center text-xl mt-10 upperase">
+      <h1 class="uppercase text-xl font-bold text-sky-800">
+        Conditionally render elements
+      </h1>
+      <!-- if Happy variable is true  -->
+      {happy && <p>I am happy to be learning Astro!</p>}
+      <!-- if finished variable is true  -->
+      {finished && <p>I finished this tutorial!</p>}
+
+      {
+        goal === 4 ? (
+          <p>My goal is to finish in 3 days.</p>
+        ) : (
+          <p>My goal is not 3 days.</p>
+        )
+      }
+    </div>
+  </body>
+</html>
