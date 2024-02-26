@@ -23,6 +23,6 @@ tags: ["astro", "blogging", "learning in public"]
 
 > **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
 
-## What's next
+## What's nexts
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
