@@ -22,6 +22,33 @@ const goal = 3;
     <title>{pageTitle}</title>
   </head>
   <body>
+    <div class="flex justify-center gap-10 bg-cyan-100 py-5">
+      <a
+        slot="
+      title"
+        class="text-xl font-bold underline text-blue-700"
+        href="/"
+      >
+        Homes
+      </a>
+      <a
+        slot="
+      title"
+        class="text-xl font-bold underline text-green-600"
+        href="/webpages/about"
+      >
+        About
+      </a>
+      <a
+        slot="
+      title"
+        class="text-xl font-bold underline text-purple-600"
+        href="/webpages/blog"
+      >
+        Blog
+      </a>
+    </div>
+
     <h1
       class="uppercase text-3xl font-semibold text-center mt-10 text-green-600"
     >
@@ -34,7 +61,7 @@ const goal = 3;
 
     <div class="flex gap-3 justify-center">
       <div class="text-left mt-10 w-56 shadow-lg rounded-md ml-5">
-        <h1 class="text-xl font-bold text-pink-400">
+        <h1 class="text-xl font-bold text-pink-400 text-center">
           Here are few facts about me :
         </h1>
         <div class="mt-2 text-left text-lg">
@@ -44,7 +71,7 @@ const goal = 3;
         </div>
       </div>
 
-      <div class="text-left mt-10 w-56 shadow-lg rounded-md ml-5">
+      <div class="text-left mt-10 w-56 shadow-lg rounded-md ml-5 text-center">
         <h1 class="text-xl font-bold text-pink-400">
           Here are my some of my hobbies :
         </h1>
@@ -59,10 +86,10 @@ const goal = 3;
       </div>
 
       <div class="text-left mt-10 w-56 shadow-lg rounded-md ml-5">
-        <h1 class="text-xl font-bold text-pink-400">
+        <h1 class="text-xl font-bold text-pink-400 text-center">
           Here are my colors of my cats :
         </h1>
-        {cats.map((colors) => <li class="mt-2 text-lg">{colors}</li>)}
+        {cats.map((colors) => <li class="mt-1 text-lg">{colors}</li>)}
       </div>
     </div>
 
@@ -74,7 +101,6 @@ const goal = 3;
       {happy && <p>I am happy to be learning Astro!</p>}
       <!-- if finished variable is true  -->
       {finished && <p>I finished this tutorial!</p>}
-
       {
         goal === 3 ? (
           <p>My goal is to finish in 3 days.</p>
