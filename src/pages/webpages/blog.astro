@@ -1,4 +1,6 @@
 ---
+import Navigation from "../../myComponents/Navigation.astro";
+import Footer from "../../myComponents/Footer.astro";
 const pageTitle = "Blog Page";
 ---
 
@@ -9,32 +11,7 @@ const pageTitle = "Blog Page";
     <title>{pageTitle}</title>
   </head>
   <body>
-    <div class="flex justify-center gap-10 bg-cyan-100 py-5">
-      <a
-        slot="
-      title"
-        class="text-xl font-bold underline text-blue-700"
-        href="/"
-      >
-        Homes
-      </a>
-      <a
-        slot="
-      title"
-        class="text-xl font-bold underline text-green-600"
-        href="/webpages/about"
-      >
-        About
-      </a>
-      <a
-        slot="
-      title"
-        class="text-xl font-bold underline text-purple-600"
-        href="/webpages/blog"
-      >
-        Blog
-      </a>
-    </div>
+    <Navigation />
 
     <h1
       class="uppercase text-3xl font-semibold text-center mt-10 text-purple-600"
@@ -57,5 +34,6 @@ const pageTitle = "Blog Page";
         >Post 4</a
       ><br />
     </div>
+    <Footer />
   </body>
 </html>

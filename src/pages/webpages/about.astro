@@ -1,4 +1,7 @@
 ---
+import "../../styles/global.css";
+import Navigation from "../../myComponents/Navigation.astro";
+import Footer from "../../myComponents/Footer.astro";
 const pageTitle = "about me~!";
 const information = {
   name: "Leng",
@@ -13,6 +16,13 @@ const cats = ["Orange", "Black"];
 const happy = true;
 const finished = false;
 const goal = 3;
+const isMyCatCute = true;
+
+//Style CSS
+const skillColor = "red";
+const skillFontWeight = 800;
+const transform = "uppercase";
+const styleDesign = "italic";
 ---
 
 <html lang="en">
@@ -22,39 +32,31 @@ const goal = 3;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <div class="flex justify-center gap-10 bg-cyan-100 py-5">
-      <a
-        slot="
-      title"
-        class="text-xl font-bold underline text-blue-700"
-        href="/"
-      >
-        Homes
-      </a>
-      <a
-        slot="
-      title"
-        class="text-xl font-bold underline text-green-600"
-        href="/webpages/about"
-      >
-        About
-      </a>
-      <a
-        slot="
-      title"
-        class="text-xl font-bold underline text-purple-600"
-        href="/webpages/blog"
-      >
-        Blog
-      </a>
-    </div>
+    <!-- DEFINE CSS FROM JS VARIABLE -->
+    <style define:vars={{ skillColor, skillFontWeight, transform }}>
+      h1 {
+        color: #304d30;
+        font-size: 2rem;
+      }
+
+      .skills {
+        color: brown;
+        color: var(--skillColor);
+        font-weight: bold;
+        list-style: circle;
+        font-weight: var(--skillFontWeight);
+        text-transform: var(--transform);
+      }
+    </style>
+
+    <Navigation />
 
     <h1
       class="uppercase text-3xl font-semibold text-center mt-10 text-green-600"
     >
       About Pages
     </h1>
-    <p class="text-3xl font-semibold text-cyan-500 mt-10 text-center">
+    <p class="text-3xl font-semibold text-black mt-10 text-center">
       This site will update as I complete more of the tutorial, so keep checking
       back and see how my journey is going!
     </p>
@@ -71,7 +73,7 @@ const goal = 3;
         </div>
       </div>
 
-      <div class="text-left mt-10 w-56 shadow-lg rounded-md ml-5 text-center">
+      <div class="mt-10 w-56 shadow-lg rounded-md ml-5 text-center">
         <h1 class="text-xl font-bold text-pink-400">
           Here are my some of my hobbies :
         </h1>
@@ -89,7 +91,8 @@ const goal = 3;
         <h1 class="text-xl font-bold text-pink-400 text-center">
           Here are my colors of my cats :
         </h1>
-        {cats.map((colors) => <li class="mt-1 text-lg">{colors}</li>)}
+        <br />
+        {cats.map((colors) => <li class=" text-lg ml-3 skills">{colors}</li>)}
       </div>
     </div>
 
@@ -99,6 +102,7 @@ const goal = 3;
       </h1>
       <!-- if Happy variable is true  -->
       {happy && <p>I am happy to be learning Astro!</p>}
+
       <!-- if finished variable is true  -->
       {finished && <p>I finished this tutorial!</p>}
       {
@@ -108,6 +112,21 @@ const goal = 3;
           <p>My goal is not 3 days.</p>
         )
       }
+      {isMyCatCute ? "My Cat is Cutiepatutie~" : "Nopee, It's not XD~"}
+
+      <div class="mt-10">
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At ad, rerum
+          atque eveniet fugiat fuga aliquid amet cumque illum eum!
+        </p>
+
+        <style define:vars={{ styleDesign }}>
+          .description {
+            font-style: var(--styleDesign);
+          }
+        </style>
+      </div>
     </div>
+    <Footer />
   </body>
 </html>
