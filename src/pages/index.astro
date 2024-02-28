@@ -1,28 +1,33 @@
 ---
-import MyComponent from "../MyReactComponent/MyReactComponent";
-import PassProps from "../MyReactComponent/PassProps";
-import Navigation from "../myComponents/Navigation.astro";
-import Footer from "../myComponents/Footer.astro";
+import Count from "../react/Count";
+import Passprops from "../react/Passprops";
+// import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Menu } from "../react/Menu.tsx";
 const pageTitle = "Homepage";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content='o"width=device-width"' />
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Navigation />
-
-    <h1 class="text-3xl font-bold text-center mt-10 text-orange-400 uppercase">
-      Use React Components Directly in Astro!
+    <Menu />
+    <h1
+      class="text-3xl font-bold text-center mt-20 sm:mt-10 text-violet-700 uppercase"
+    >
+      ✨ Use React Components Directly in Astro ✨
     </h1>
     <!-- COMPONENT SHOULD HAVE CLIENT -->
-    <MyComponent client:visible />
+    <Count client:visible />
     <!-- PASSING A PROPS INTO ASTRO FILE -->
-    <PassProps username={"Leng"} age={22} isCute={true} />
-
+    <Passprops username={"Meow"} age={100} isCute={true} />
     <Footer />
+
+    <script>
+      import "../scripts/Menu.js";
+    </script>
   </body>
 </html>

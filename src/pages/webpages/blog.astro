@@ -1,6 +1,7 @@
 ---
-import Navigation from "../../myComponents/Navigation.astro";
-import Footer from "../../myComponents/Footer.astro";
+// import Navigation from "../../myComponents/Navigation.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 const pageTitle = "Blog Page";
 ---
 
@@ -11,7 +12,7 @@ const pageTitle = "Blog Page";
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Navigation />
+    <Header />
 
     <h1
       class="uppercase text-3xl font-semibold text-center mt-10 text-purple-600"
@@ -35,5 +36,9 @@ const pageTitle = "Blog Page";
       ><br />
     </div>
     <Footer />
+    <!-- Import JS Script -->
+    <script>
+      import "../../scripts/Menu";
+    </script>
   </body>
 </html>

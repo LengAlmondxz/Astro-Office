@@ -1,7 +1,7 @@
 ---
-import "../../styles/global.css";
-import Navigation from "../../myComponents/Navigation.astro";
-import Footer from "../../myComponents/Footer.astro";
+import "../../styles/Global.css";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 const pageTitle = "about me~!";
 const information = {
   name: "Leng",
@@ -32,6 +32,7 @@ const styleDesign = "italic";
     <title>{pageTitle}</title>
   </head>
   <body>
+    <Header />
     <!-- DEFINE CSS FROM JS VARIABLE -->
     <style define:vars={{ skillColor, skillFontWeight, transform }}>
       h1 {
@@ -48,8 +49,6 @@ const styleDesign = "italic";
         text-transform: var(--transform);
       }
     </style>
-
-    <Navigation />
 
     <h1
       class="uppercase text-3xl font-semibold text-center mt-10 text-green-600"
@@ -128,5 +127,9 @@ const styleDesign = "italic";
       </div>
     </div>
     <Footer />
+    <!-- Import JS Script -->
+    <script>
+      import "../../scripts/Menu";
+    </script>
   </body>
 </html>
