@@ -1,5 +1,6 @@
 ---
-import "../styles/Global.css";
+import "../styles/global.css";
+import {HamburgerToggle} from "../react/Toggle.tsx"
 ---
 
 <html lang="en">
@@ -9,12 +10,17 @@ import "../styles/Global.css";
     <title>Document</title>
   </head>
   <body>
-    <div class="mx-auto">
+
+    <div class="mx-auto ">
+      
       <header
-        class="bg-pink-50 sm:bg-violet-50 flex justify-center py-0 sm:py-5 nav-header"
+        class="bg-violet-50 flex justify-center h-20 nav-header"
       >
-        <nav class="uppercase flex gap-10">
-          <div class="nav-links">
+      <HamburgerToggle client:load />
+      
+        <nav class="uppercase hidden sm:flex gap-10">
+    
+          <div class="nav-links mt-3"> 
             <a class="text-xl font-bold underline text-blue-70" href="/">
               Home
             </a>
