@@ -1,11 +1,9 @@
 import { useState } from "react";
-import Navigation from "../components/Navigation.astro";
-
 
 export const HamburgerToggle = () => {
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   return (
-    <div>
+    <div className="relative">
       <button
         onClick={() => setToggle(!toggle)}
         className="absolute flex sm:hidden left-[80%] top-6 px-1 py-1 rounded-lg shadow-lg bg-slate-100"
@@ -28,7 +26,7 @@ export const HamburgerToggle = () => {
       {toggle && (
         <ul className="group/item divide-y divide-white bg-pink-200 px-6 py-5 space-y-2 rounded-lg uppercase font-semibold top-20 left-[80%] absolute text-left">
           <li className="group/menu">
-            <a  href="/">Home</a>
+            <a href="/">Home</a>
           </li>
           <li className="group/menu">
             <a href="/webpages/about">About</a>

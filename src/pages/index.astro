@@ -1,35 +1,15 @@
 ---
-import Count from "../react/Count";
-import Passprops from "../react/Passprops";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Navigation from "../components/Navigation.astro";
-const pageTitle = "Homepage";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Home Page";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content='o"width=device-width"' />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <!-- <Header /> --> 
-    <!-- <Navigation /> -->
-    <Navigation client:load/>
-    <h1
-      class="text-3xl font-bold text-center mt-20 sm:mt-10 text-violet-700 uppercase"
-    >
-      ✨ Use React Components Directly in Astro ✨
+<BaseLayout pageTitle={pageTitle}>
+  <div>
+    <h1 class="text-3xl font-bold text-center mt-10 text-green-700 uppercase">
+      SLOT IN ASTRO ( INJECT CHILD CONTENT) 😎
     </h1>
-    <!-- COMPONENT SHOULD HAVE CLIENT -->
-    <Count client:visible />
-    <!-- PASSING A PROPS INTO ASTRO FILE -->
-    <Passprops username={"Meow"} age={100} isCute={true} />
-    <Footer />
-
-    <script>
-      import "../scripts/Menu.js";
-    </script>
-  </body>
-</html>
+    <h2 class="text-center mt-2 font-semibold text-lg">
+      My awesome blog subtitle
+    </h2>
+  </div>
+</BaseLayout>

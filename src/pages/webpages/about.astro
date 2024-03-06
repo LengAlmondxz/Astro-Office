@@ -1,138 +1,17 @@
 ---
-import styles from "../../styles/Global.css"
-// import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import Navigation from "../../components/Navigation.astro";
-const pageTitle = "About Page";
-const information = {
-  name: "Leng",
-  age: 22,
-  favColor: "Blue",
-  hobbies: ["Playing", "Singing", "Sleeping", "Watching"],
-};
-
-const cats = ["Orange", "Black"];
-
-//Variables
-const happy = true;
-const finished = false;
-const goal = 3;
-const isMyCatCute = true;
-
-//Style CSS
-const skillColor = "red";
-const skillFontWeight = 800;
-const transform = "uppercase";
-const styleDesign = "italic";
+import AboutLayout from "../../layouts/AboutLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <!-- <Header /> -->
-    <Navigation client:load/>
-    <!-- DEFINE CSS FROM JS VARIABLE -->
-    <style define:vars={{ skillColor, skillFontWeight, transform }}>
-      h1 {
-        color: #304d30;
-        font-size: 2rem;
-      }
-
-      .skills {
-        color: brown;
-        color: var(--skillColor);
-        font-weight: bold;
-        list-style: circle;
-        font-weight: var(--skillFontWeight);
-        text-transform: var(--transform);
-      }
-    </style>
-
-    <h1
-      class="uppercase text-3xl font-semibold text-center mt-10 text-green-600"
-    >
-      About Pages
+<AboutLayout>
+  <div>
+    <h1 class="text-3xl font-bold text-center mt-10 text-green-700 uppercase">
+      SLOT IN ASTRO ( INJECT CHILD CONTENT) 😎
     </h1>
-    <p class="text-3xl font-semibold text-black mt-10 text-center">
-      This site will update as I complete more of the tutorial, so keep checking
-      back and see how my journey is going!
-    </p>
-
-    <div class="flex gap-3 justify-center">
-      <div class="text-left mt-10 w-56 shadow-lg rounded-md ml-5">
-        <h1 class="text-xl font-bold text-pink-400 text-center">
-          Here are few facts about me :
-        </h1>
-        <div class="mt-2 text-left text-lg">
-          <p>Nickname : {information.name}</p>
-          <p>Age : {information.age}</p>
-          <p>Favoriate Color : {information.favColor}</p>
-        </div>
-      </div>
-
-      <div class="mt-10 w-56 shadow-lg rounded-md ml-5 text-center">
-        <h1 class="text-xl font-bold text-pink-400">
-          Here are my some of my hobbies :
-        </h1>
-        <div class="mt-2 text-left text-lg">
-          <ul class="list-decimal ml-10">
-            <li>{information.hobbies[0]}</li>
-            <li>{information.hobbies[1]}</li>
-            <li>{information.hobbies[2]}</li>
-            <li>{information.hobbies[3]}</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="text-left mt-10 w-56 shadow-lg rounded-md ml-5">
-        <h1 class="text-xl font-bold text-pink-400 text-center">
-          Here are my colors of my cats :
-        </h1>
-        <br />
-        {cats.map((colors) => <li class=" text-lg ml-3 skills">{colors}</li>)}
-      </div>
-    </div>
-
-    <div class="text-center text-xl mt-10 upperase">
-      <h1 class="uppercase text-xl font-bold text-sky-800">
-        Conditionally render elements
-      </h1>
-      <!-- if Happy variable is true  -->
-      {happy && <p>I am happy to be learning Astro!</p>}
-
-      <!-- if finished variable is true  -->
-      {finished && <p>I finished this tutorial!</p>}
-      {
-        goal === 3 ? (
-          <p>My goal is to finish in 3 days.</p>
-        ) : (
-          <p>My goal is not 3 days.</p>
-        )
-      }
-      {isMyCatCute ? "My Cat is Cutiepatutie~" : "Nopee, It's not XD~"}
-
-      <div class="mt-10">
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At ad, rerum
-          atque eveniet fugiat fuga aliquid amet cumque illum eum!
-        </p>
-
-        <style define:vars={{ styleDesign }}>
-          .description {
-            font-style: var(--styleDesign);
-          }
-        </style>
-      </div>
-    </div>
-    <Footer />
-    <!-- Import JS Script -->
-    <script>
-      import "../../scripts/Menu";
-    </script>
-  </body>
-</html>
-../../react/Toggle.tsx
+    <h2 class="text-center mt-2 font-semibold text-lg">
+      <strong class="text-pink-500">Meow! 😸</strong> Greetings, dear human! I'm
+      your virtual feline friend, here to whisker <br /> you away on a delightful
+      journey through the world of conversation. <br /> With my purrfectly charming
+      personality and whiskers full of wisdom.
+    </h2>
+  </div>
+</AboutLayout>

@@ -1,0 +1,45 @@
+---
+import Footer from "../components/Footer.astro";
+const pageTitle = "Blog Page";
+import Navigation from "../components/Navigation.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <!-- <Header /> -->
+    <Navigation client:load />
+
+    <h1
+      class="uppercase text-3xl font-semibold text-center mt-10 text-purple-600"
+    >
+      blog page
+    </h1>
+    <p class="text-3xl font-semibold text-pink-400 mt-10 text-center">
+      This site will update as I complete more of the tutorial, so keep checking
+      back and see how my journey is going!
+    </p>
+
+    <div class="text-center text-3xl mt-10">
+      <a class="font-semibold text-yellow-300 underline" href="/posts/post-1"
+        >Post 1</a
+      ><br />
+      <a class="font-semibold text-yellow-300 underline" href="/posts/post-2"
+        >Post 2</a
+      ><br />
+      <a class="font-semibold text-yellow-300 underline" href="/posts/post-3"
+        >Post 4</a
+      ><br />
+    </div>
+    <slot />
+    <Footer />
+    <!-- Import JS Script -->
+    <!-- <script>
+      import "../../scripts/Menu";
+    </script> -->
+  </body>
+</html>

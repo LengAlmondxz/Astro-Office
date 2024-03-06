@@ -1,0 +1,34 @@
+---
+import Count from "../react/Count";
+import Passprops from "../react/Passprops";
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content='o"width=device-width"' />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Navigation />
+    <h1
+      class="text-3xl font-bold text-center mt-20 sm:mt-10 text-violet-700 uppercase"
+    >
+      ✨ Use React Components Directly in Astro ✨
+    </h1>
+    <!-- COMPONENT SHOULD HAVE CLIENT -->
+    <Count client:visible />
+    <!-- PASSING A PROPS INTO ASTRO FILE -->
+    <Passprops username={"Meow"} age={100} isCute={true} />
+    <!-- SLOT FOR INJECT CHILD CONTENT -->
+    <slot />
+    <Footer />
+
+    <!-- <script>
+      import "../scripts/Menu.js";
+    </script> -->
+  </body>
+</html>
